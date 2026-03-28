@@ -1,0 +1,8 @@
+name: "metal-buffet"
+main: "metalbuffet.MetalBuffet"
+version: "Build 0"
+minGameVersion: 155.4
+java: true
+
+displayName: "Metal Buffet"
+author: "Nullotte"
