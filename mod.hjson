@@ -1,8 +1,9 @@
 name: "metal-buffet"
 main: "metalbuffet.MetalBuffet"
 version: "Build 0"
-minGameVersion: 155.4
+minGameVersion: 157
 java: true
 
 displayName: "Metal Buffet"
 author: "Nullotte"
+description: "any random ideas i have related to this game, all compiled into one mod"
