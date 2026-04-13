@@ -14,7 +14,7 @@ public class MBPlanets {
     public static void load() {
         planetWithRings = new Planet("planet-with-rings", Planets.sun, 1f, 2) {{
             meshLoader = () -> new MultiMesh(
-                    new ShaderSphereMesh(this, Shaders.planet, 2),
+                    new ShaderSphereMesh(this, Shaders.unlit, 2),
                     new RingMesh(this, 0, 80, 120, 3f, 20f, Color.valueOf("ebfffd"), Color.valueOf("ade4ff"))
             );
 
