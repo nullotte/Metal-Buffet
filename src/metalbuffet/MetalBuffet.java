@@ -10,6 +10,7 @@ public class MetalBuffet extends Mod {
     @Override
     public void loadContent() {
         MBBlocks.load();
+        MBPlanets.load();
         MBTechTree.load();
     }
 }
