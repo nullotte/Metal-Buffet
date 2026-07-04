@@ -10,6 +10,6 @@ public class AreaDamageAbility extends Ability {
 
     @Override
     public void update(Unit unit) {
-        Damage.damage(unit.team, unit.x, unit.y, unit.hitSize * Vars.unitCollisionRadiusScale, damage);
+        Damage.damage(unit.team, unit.x, unit.y, unit.hitSize * Vars.unitCollisionRadiusScale * 1.1f, damage, false, true);
     }
 }
