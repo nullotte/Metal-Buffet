@@ -14,7 +14,7 @@ public class MiniPlanetUnitType extends UnitType {
 
         drag = 0.07f;
         speed = 2f;
-        rotateSpeed = 5f;
+        rotateSpeed = 0f;
         accel = 0.09f;
         health = 100000f;
         itemCapacity = 0;
@@ -27,8 +27,8 @@ public class MiniPlanetUnitType extends UnitType {
 
         this.drawPlanet = drawPlanet;
         abilities.add(new DrawMiniPlanetAbility(drawPlanet));
-        hitSize = drawPlanet.radius * 64f;
-        softShadowScl = hitSize / 10f;
+        hitSize = 96f;
+        softShadowScl = 2f;
         abilities.add(new AreaDamageAbility());
     }
 }

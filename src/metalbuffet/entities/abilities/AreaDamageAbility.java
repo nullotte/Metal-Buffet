@@ -1,5 +1,6 @@
 package metalbuffet.entities.abilities;
 
+import arc.scene.ui.layout.*;
 import mindustry.*;
 import mindustry.entities.*;
 import mindustry.entities.abilities.*;

@@ -26,6 +26,10 @@ public class DrawMiniPlanetAbility extends Ability {
     public FrameBuffer buffer;
     public PlanetParams planetParams;
 
+    {
+        display = false;
+    }
+
     public DrawMiniPlanetAbility(Planet drawPlanet) {
         this.drawPlanet = drawPlanet;
     }
