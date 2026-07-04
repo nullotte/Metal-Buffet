@@ -19,6 +19,9 @@ public class MiniPlanetUnitType extends UnitType {
         health = 100000f;
         itemCapacity = 0;
 
+        hovering = true;
+        canDrown = false;
+
         drawCell = false;
         drawBody = false;
 
