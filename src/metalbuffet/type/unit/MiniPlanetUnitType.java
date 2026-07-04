@@ -1,7 +1,9 @@
 package metalbuffet.type.unit;
 
+import arc.graphics.g2d.*;
 import metalbuffet.entities.abilities.*;
 import mindustry.content.*;
+import mindustry.entities.abilities.*;
 import mindustry.gen.*;
 import mindustry.type.*;
 
@@ -30,5 +32,18 @@ public class MiniPlanetUnitType extends UnitType {
         hitSize = 96f;
         softShadowScl = 2f;
         abilities.add(new AreaDamageAbility());
+    }
+
+    @Override
+    public void draw(Unit unit) {
+        super.draw(unit);
+
+        // additional draw so this unit draws properly as a payload
+        if (!unit.isAdded()) {
+            for (Ability a : unit.abilities) {
+                Draw.reset();
+                a.draw(unit);
+            }
+        }
     }
 }
