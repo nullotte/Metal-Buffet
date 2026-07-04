@@ -43,17 +43,19 @@ public class MetalBuffet extends Mod {
         PlanetMapper.run(planet, divisions, doSectors);
     }
 
-    public static void testBufferRender() {
-        FrameBuffer buffer = new FrameBuffer(512, 512);
+    public static void testBufferRender(Planet planet) {
+        FrameBuffer buffer = new FrameBuffer(256, 256);
         buffer.begin(Color.clear);
         Draw.proj(0, 0, buffer.getWidth(), buffer.getHeight());
 
         PlanetParams params = new PlanetParams();
+        params.planet = planet;
         params.viewW = buffer.getWidth();
         params.viewH = buffer.getHeight();
-        params.zoom = 0.5f;
+        params.zoom = 0.2f;
         params.camPos.set(params.planet.solarSystem.position).sub(params.planet.position).nor();
-        params.uiAlpha = 0f;
+        params.planet.hasAtmosphere = false;
+        params.drawSkybox = false;
 
         Vars.renderer.planets.render(params);
         buffer.end();
@@ -61,7 +63,7 @@ public class MetalBuffet extends Mod {
 
         buffer.begin();
         Pixmap pixmap = ScreenUtils.getFrameBufferPixmap(0, 0, buffer.getWidth(), buffer.getHeight());
-        new Fi("hey guys.png").writePng(pixmap);
+        new Fi("render-" + planet.name + ".png").writePng(pixmap);
         buffer.end();
 
         buffer.dispose();
